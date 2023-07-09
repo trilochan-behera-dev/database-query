@@ -1,3 +1,5 @@
+-- tables and columns
+
 -- categories                  ||     categoryID,categoryName,description,picture
 
 -- customers                   ||    customerID,companyName,contactName,contactTitle,address,city,region,postalCode,country,phone,fax
@@ -142,7 +144,6 @@ JOIN (
   SELECT AVG(unitPrice * quantity) AS average_order_value
   FROM order_details
 ) AS avg ON (SELECT SUM(unitPrice * quantity) FROM order_details WHERE orderID = o.orderID) > avg.average_order_value;
-
 
 
 -- 14) Produce a customer report (must also include those we have not yet done business with) showing CustomerID, Customer name, and total sales made to that customer.
